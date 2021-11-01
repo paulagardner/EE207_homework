@@ -18,9 +18,29 @@ sum(responsevariable[6:10])
 
 
 
+
+
+
+########################PROBLEM 3 
+
+#set up the df 
 observations <- c(1.25, 0.88, 1.22, 1.15, 1.41, 0.98, 1.30, 1.19, 1.43, 1.07, 1.37, 1.44, 1.43, 1.43, 1.42, 1.41)
 colony <- c(1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4)
 seedsize <- c('s', 's', 's', 's', 'm', 'm', 'm', 'm', 'l', 'l', 'l', 'l', 'xl', 'xl', 'xl', 'xl')
 
 df3 <- data.frame(observations, seedsize, colony)
 df3
+
+#
+onewayaov <- aov(observations ~ seedsize)
+summary(onewayaov)
+
+
+# part b: do the randomized block anova
+seedsize <- as.factor(seedsize)
+colony <- as.factor(colony)
+
+modelrb <- aov(observations ~ colony + seedsize)
+summary(modelrb)
+
+#c 
