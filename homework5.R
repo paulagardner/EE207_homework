@@ -14,6 +14,16 @@ df
 
 
 
+sum(responsevariable[1:5]) #trying to do this as sum(df$responsevariable)) returns a error: object of type 'closure' is not subsettable
+sum(responsevariable[6:10])
+
+
+(    (( sum(responsevariable[1:5])^2 )/5)   +  ( sum( responsevariable[6:10] )^2)/5     )           -         (  ((sum(responsevariable[1:5]) + sum(responsevariable[6:10])) ^2 ) / (5 + 5) )      
+
+
+
+
+
 
 #######################################
 #part b 
